@@ -1,0 +1,30 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+         
+    <display-name>Session Demo</display-name>
+    <description>
+      ToDoList example with User Login
+    </description>
+
+    <servlet>
+        <servlet-name>  my-servlet       </servlet-name>
+        <servlet-class>
+        	edu.cmu.cs.webapp.todolist2.ToDoList2
+        </servlet-class>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>  my-servlet        </servlet-name>
+        <url-pattern>   /ToDoList   </url-pattern>
+    </servlet-mapping>
+    
+
+    <welcome-file-list>
+        <welcome-file>   ToDoList   </welcome-file>
+    </welcome-file-list>
+
+</web-app>

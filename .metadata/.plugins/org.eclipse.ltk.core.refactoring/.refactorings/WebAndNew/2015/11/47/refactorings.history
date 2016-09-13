@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;LeetCodeNew/access.log.txt&apos; to &apos;access.log&apos;" description="Rename resource &apos;access.log.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="access.log.txt" name="access.log" stamp="1448135531071" updateReferences="true"/>
+</session>

@@ -1,0 +1,37 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>ToDoList via SQL</display-name>
+    <description>
+      Example of the use of SQL and JDBC
+    </description>
+
+    <servlet>
+        <servlet-name>  my-servlet       </servlet-name>
+        <servlet-class>
+        	edu.cmu.cs.webapp.todolist3.ToDoList3
+        </servlet-class>
+        <init-param>
+            <param-name>   jdbcDriver             </param-name> 
+            <param-value>  com.mysql.jdbc.Driver  </param-value>
+        </init-param>
+        <init-param>
+            <param-name>   jdbcURL                </param-name> 
+            <param-value>  jdbc:mysql:///test     </param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>  my-servlet        </servlet-name>
+        <url-pattern>   /ToDoList   </url-pattern>
+    </servlet-mapping>
+    
+
+    <welcome-file-list>
+        <welcome-file>   ToDoList   </welcome-file>
+    </welcome-file-list>
+
+</web-app>

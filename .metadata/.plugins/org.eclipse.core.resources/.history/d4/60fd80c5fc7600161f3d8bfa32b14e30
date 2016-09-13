@@ -1,0 +1,52 @@
+package array;
+
+public class DecodeString {
+	 public String decodeString(String s) 
+	    {
+	        Stack<Character> sta = new Stack<Character>();
+	        for (char c:s.toCharArray())
+	        {
+	            if(c==']')
+	            {
+	                String repeat="";
+	                while(sta.peek()!='[')
+	                {
+	                    repeat=sta.peek()+repeat;
+	                    sta.pop();
+	                }
+	                sta.pop();
+	                String num="";
+	                while(!sta.isEmpty())
+	                {
+	                    char n = sta.peek();
+	                    if(!Character.isDigit(n))break;
+	                    else
+	                    {
+	                        num = n+num;
+	                        sta.pop();
+	                    }
+	                }
+	                int re=0;
+	                if(num.equals(""))re=1;
+	                else re=Integer.parseInt(num);
+	                while(re-->0)
+	                {
+	                    for(char c1:repeat.toCharArray())
+	                        sta.push(c1);
+	                }
+	            }
+	            else
+	            {
+	                sta.push(c);
+	            }
+	        }
+	        String res="";
+	        while(!sta.isEmpty())
+	        {
+	            
+	            res=sta.peek()+res;
+	            sta.pop();
+	        }
+	        return res;
+	    }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+  	    <meta charset="utf-8" >
+        <title>To Do List</title>
+        <script src="todolist.js"> </script>
+    </head>
+
+    <body id="body">
+        <h2>Web App To Do List</h2>
+
+        <table>
+            <tr>
+                <td colspan="3"><hr></td>
+            </tr>
+            <tr>
+                <td style="font-size: large;">Item to Add:</td>
+                <td colspan="2"><input size="40" id="item" type="text"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input id="addToTopButton" type="button" value="Add To Top" onClick="addToList('top');"></td>
+                <td><input id="addToBottomButton" type="button" value="Add to Bottom" onClick="addToList('bottom');"></td>
+            </tr>
+            <tr>
+                <td colspan="3"><hr></td>
+            </tr>
+        </table>
+
+        <p style="font-size: large;">The list now has <span id="numberOfItems">0</span> items.</p>
+
+        <table id="list"></table>
+
+    </body>
+</html>

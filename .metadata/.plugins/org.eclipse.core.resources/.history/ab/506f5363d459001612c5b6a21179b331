@@ -1,0 +1,51 @@
+package sorting;
+
+public class QuickSort {
+	
+	public void quickSort(int[] array, int low, int high) {
+		if(array == null || array.length == 0) {
+			return;
+		}
+		// s首先第一点： 排出如果数组里面只有一个元素 和 非法输入的情况
+		if(low >= high) {
+			return;
+		}
+		
+		int i = low; 
+		int j = high;
+		int mid = i + (j - i) / 2;
+		int pivotal = array[mid];
+		
+		//等于的时候计算一下： 让他们错开 之后再递归 
+		while(i <= j) {
+			// 这里不需要判断边界，原因是一定会最终遇到pivotal 然后跳出循环
+			while(array[i] < pivotal) {
+				i++;
+			}
+			//同理 
+			while(array[j] > pivotal) {
+				j--;
+			}
+			
+			if(i <= j) {
+				int temp = array[i];
+				array[i] = array[j];
+				array[j] = temp; 
+				i++;
+				j--;
+			}
+				
+		}
+		
+		if(j > low) {
+			quickSort(array, low, j);
+		}
+			
+		if(i < high) {
+			quickSort(array, i, high);
+		}
+		
+		
+	}
+
+}

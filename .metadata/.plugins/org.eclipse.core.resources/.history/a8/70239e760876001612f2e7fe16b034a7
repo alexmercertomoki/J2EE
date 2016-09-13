@@ -1,0 +1,99 @@
+package array;
+
+import java.nio.file.attribute.AclEntry.Builder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
+
+public class Test {
+	
+	public static void main(String[] args) {
+//		
+//		FibonacciLastDigit fld = new FibonacciLastDigit();
+//		long res1 = fld.FibonacciLastDigitMethod1(62);
+//		long res2 = fld.FibonacciLastDigitMethod2(62);
+//		System.out.println(" the result is" + res1);
+//		System.out.println(" the result is" + res2);
+//		
+//		
+		
+//		StringArrayReverseOrder saro = new StringArrayReverseOrder();
+//		
+//		String test1 = saro.solution("xyy");
+//		System.out.println(test1);
+		
+//		BuildSequences bs = new BuildSequences();
+//		ArrayList<String> stringArr = bs.buildSequences("ba");
+//		
+//		for(String s : stringArr) {
+//			System.out.println(s);
+//		}
+		
+//		String[] strArr = BuildSequences.buildSequences("ba");
+//		
+//		for(String s : strArr) {
+//			System.out.println(s);
+//		}
+
+		
+//		IslandsNumbers iln = new IslandsNumbers();
+//		int[][] islands = { {1,1,1,0},
+//							{0,1,0,0},	
+//							{1,0,1,0}
+//		};
+//		int[] sizes = {4,1,2};
+//		sizes = iln.islandNumber(islands, sizes);
+//		for(int i = 0; i < sizes.length; i++) {
+//			System.out.println(sizes[i]);
+//		}
+		
+//		StrictlyIncreasingSubArr sb = new StrictlyIncreasingSubArr();
+//		int[] numbers = {1, 4, 3};
+//		int num = sb.strictlyIncreasingSubArrNums(numbers);
+//		System.out.println(num);
+		
+//		MaxSumiArr msa = new MaxSumiArr();
+//		int[] numbers = {8, 3, 1, 2};
+//		int max = msa.maxSumiArr(numbers);
+//		System.out.println(max);
+		
+		
+//		int[] numbers = {13,7,1,6,12};
+//		NextGreaterElement ngn = new NextGreaterElement();
+//		numbers = ngn.nextGreaterElement(numbers);
+//		for(int i = 0; i < numbers.length; i++) {
+//			System.out.println(numbers[i]);
+//		}
+		
+		// 48在 ascii 码中 int 1对应的是 1 char 1对应的是49 所以对比string 的时候int 1 要 加 48 
+//		int i = 1;
+//		char b = (char)(i + 48);
+//		System.out.println(b) ;
+		
+		
+//		BackTrackingTheKth bttk = new BackTrackingTheKth();
+//		String s = bttk.getPermutation(2, 2);
+//		System.out.println(s);
+		
+//		FindMedianTwoSorted2  fmts = new FindMedianTwoSorted2();
+//		double ret = fmts.findMedianSortedArrays(new int[]{1,2,3,4,5}, new int[]{6,7,8,9,10});
+//		System.out.println(ret);
+		
+		
+//		Integer i =  4;
+//		Character c = 'a';
+//		System.out.println(i + " " + c);
+		
+//		int[] arr = new int[100];
+//		System.out.println(Arrays.toString(arr));
+		
+//		ConfirmRotateArray cfra = new ConfirmRotateArray();
+//		boolean b  = cfra.rotate2("edcba", "abcde");
+//		System.out.println(b);
+		
+		
+		
+	}
+
+}

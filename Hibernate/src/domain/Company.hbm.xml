@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="com.bgy.domain.Company"
+		table="HibernateManyToOne_Company" lazy="false">
+		<id name="id" column="ID" >
+			<generator class="native"/>
+		</id>
+		<property name="name" column="name" />
+		<set name="emps" cascade="all" lazy="false">
+			<key column="companyId"/>
+			<one-to-many class="com.bgy.domain.Employee"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+package array;
+
+public class ConfirmRotateArray {
+	
+	public boolean rotateArr(String p, String s) {
+		
+		int j = 0;
+		char begin = s.charAt(j);
+	//	boolean flag = true; 
+		
+		for(int i = 0; i < p.length(); i++) {
+			if(begin == p.charAt(i)) {
+				while(i < p.length() && s.charAt(j) == p.charAt(i)) {
+					i++;
+					j++;
+				}
+				if(i == p.length()) {
+					break;
+				}
+				return false;
+			}
+		}
+		
+		
+		for(int i = 0 ;j < s.length(); i++, j++) {
+			if(p.charAt(i) != s.charAt(j)) {
+				return false; 
+			}
+		}
+		return true;
+		
+		
+	}
+
+}

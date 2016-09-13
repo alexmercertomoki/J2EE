@@ -1,0 +1,10 @@
+package array;
+
+public class ConfirmRotateArray {
+	
+	public boolean rotateArr(String p, String s) {
+			
+		
+	}
+
+}

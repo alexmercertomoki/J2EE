@@ -1,0 +1,5 @@
+INDEX VERSION 1.127
+/Users/mac/Documents/workspaceJ2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3636544434.index
+/KellyHello/src
+/Users/mac/Documents/workspaceJ2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3064789226.index
+/KellyG/src

@@ -1,0 +1,169 @@
+package homework5;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+/***********************************************************
+ *
+ * 08-722 Data Structures for Application Programmers Homework Assignment 5
+ * Document Similarity
+ *
+ * Andrew ID: Name: bilei
+ *
+ ***********************************************************/
+
+public class Similarity {
+	private int size = 0; // no static
+	private HashMap<String, Double> hm = new HashMap<String, Double>();
+	private int numberOfLine = 0;
+
+	public Similarity(String value) {
+		if (value != null && value.length() != 0) {
+			String[] strarr = value.split("\\W");
+
+			for (int i = 0; i < strarr.length; i++) {
+				if (strarr[i] != null && strarr[i].length() != 0
+						&& strarr[i].matches("[A-Za-z]+")) {
+					size++;
+					String lowerCaseWord = strarr[i].toLowerCase();
+					if (hm.containsKey(lowerCaseWord)) {
+						double count = hm.get(lowerCaseWord) + 1;
+						hm.put(lowerCaseWord, count);
+					} else {
+						hm.put(lowerCaseWord, 1.0);
+					}
+				}
+			}
+		}
+
+	}
+
+	public Similarity(File newFile) throws FileNotFoundException {
+
+		if (newFile != null&&newFile.length()!=0) {
+
+			Scanner file = new Scanner(newFile);
+
+			while (file.hasNextLine()) {
+				numberOfLine++;
+				String line = file.nextLine();
+				String[] strarr = line.split("\\W");
+
+				for (int i = 0; i < strarr.length; i++) {
+					if (strarr[i] != null && strarr[i].length() != 0
+							&& strarr[i].matches("[A-Za-z]+")) {
+						size++;
+						String lowerCaseWord = strarr[i].toLowerCase();
+						if (hm.containsKey(lowerCaseWord)) {
+
+							double count = hm.get(lowerCaseWord) + 1;
+							hm.put(lowerCaseWord, count);
+
+						} else {
+							hm.put(lowerCaseWord, 1.0);
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	public int numOfWords() {
+
+		return size;
+
+	}
+
+	public int numOfWordsNoDups() {
+
+		return hm.size();
+
+	}
+
+	public double euclideanNorm(HashMap<String, Double> map) {
+		double ecn = 0;
+		if (map != null) {
+			
+			double squareSum = 0;
+			Iterator<Entry<String, Double>> itr = map.entrySet().iterator();
+			while (itr.hasNext()) {
+				Map.Entry<String, Double> siPair = itr.next();
+				squareSum += ((double) siPair.getValue() * (double) siPair
+						.getValue());
+			}
+
+			ecn = Math.sqrt(squareSum);
+
+			
+		}
+		return ecn;
+
+	}
+
+	public double euclideanNorm() {
+		return this.euclideanNorm(hm);
+	}
+
+	public HashMap<String, Double> getMap() {
+
+		return this.hm;
+
+	}
+
+	public double dotProduct(HashMap<String, Double> map) {
+
+		double dotProduct = 0;
+		if (map != null) {
+			Iterator<Entry<String, Double>> itr = map.entrySet().iterator();
+			while (itr.hasNext()) {
+				Entry<String, Double> siPair = itr.next();
+				if (hm.containsKey(siPair.getKey())) {
+					dotProduct = dotProduct + hm.get(siPair.getKey())
+							* siPair.getValue();
+				}
+
+			}
+		}
+
+		return dotProduct;
+
+	}
+
+	public double distance(HashMap<String, Double> map) {
+		
+		double dist = 0;
+		
+		if (map != null) {
+			
+			
+			System.out.println(this.dotProduct(map));
+			System.out.println((this.euclideanNorm()) * (euclideanNorm(map)));
+			
+			double helper=this.dotProduct(map)
+					/ ((this.euclideanNorm()) * (euclideanNorm(map)));
+			
+			if(helper>1.0){
+				return 0;
+			}
+			dist = Math.acos(helper);
+			
+			
+		}
+		
+		
+		return dist;
+	}
+
+	public int numberOfLines() {
+
+		return numberOfLine;
+
+	}
+
+}

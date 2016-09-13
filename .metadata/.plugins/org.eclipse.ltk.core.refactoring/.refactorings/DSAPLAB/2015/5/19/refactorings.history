@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DSAPLAB/src/lab7/FindMedian(2).java&apos; to &apos;FindMedian.java&apos;" description="Rename resource &apos;FindMedian(2).java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/lab7/FindMedian(2).java" name="FindMedian.java" stamp="1431027376143" updateReferences="true"/>
+</session>

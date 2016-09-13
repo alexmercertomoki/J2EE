@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Find_k_Points.java&apos; to &apos;NewEra/src/part1OA&apos;&#x0A;- Original project: &apos;DsapTest&apos;&#x0A;- Destination element: &apos;NewEra/src/part1OA&apos;&#x0A;- Original element: &apos;trytry.Find_k_Points.java&apos;" description="Copy compilation unit" destination="=NewEra/src&lt;part1OA" element1="/src&lt;trytry{Find_k_Points.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1446406436207" units="1" version="1.0"/>
+</session>

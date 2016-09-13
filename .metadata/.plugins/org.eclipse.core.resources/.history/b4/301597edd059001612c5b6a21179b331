@@ -1,0 +1,38 @@
+package sorting;
+
+public class QuickSort {
+	
+	public void quickSort(int[] array, int low, int high) {
+		if(array == null || array.length == 0) {
+			return;
+		}
+			
+		if(low >= high) {
+			return;
+		}
+		
+		int i = low; 
+		int j = high;
+		int mid = i + (j - i) / 2;
+		int pivotal = array[mid];
+
+		while(i < j) {
+			
+			while(i < j && array[i] < pivotal) {
+				i++;
+			}
+			while(i < j && array[j] > pivotal) {
+				j--;
+			}
+			
+			int temp = array[i];
+			array[i] = array[j];
+			array[j] = temp; 
+				
+		}
+			
+		
+		
+	}
+
+}

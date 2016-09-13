@@ -1,0 +1,30 @@
+////package dp;
+////public int editDistance(String a, String b) { 		if (a == null || b == null) { 			return Integer.MIN_VALUE; 		} 		if (a.length() == 0) { 			return b.length(); 		} 		if (b.length() == 0) { 			return a.length(); 		} 		 		return recurse(a, b, 0, 0); 	} 	 	private int recurse(String a, String b, int pa, int pb) { 		if (pa == a.length()) { 			return b.length() - pb; 		} 		 		if (pb == b.length()) { 			return a.length() - pa; 		} 		 		if (a.charAt(pa) == b.charAt(pb)) { 			return recurse(a, b, pa + 1, pb + 1); 		} else { 			return Math.min(Math.min(recurse(a, b, pa + 1, pb), recurse(a, b, pa + 1, pb)),recurse(a, b, pa, pb)) + 1;  		} 	}
+//public class WordChange {
+//	public int editDistance(String a, String b) {
+//		if(a == null || b == null) {
+//			return 0; 
+//		}
+//		int len = Math.max(a.length() , b.length());
+//		int[] minDistance = new int[len];
+//		
+//		change(minDistance, 0, a, b);
+//	}
+//	
+//	public int change(int[] minDistance, int begin, String a, String b) {
+//		if(begin == a.length()) {
+//			
+//			
+//		}
+//		
+//		if(a.charAt(begin) == b.charAt(begin)) {
+//			minDistance[0] = 0;
+//			return change(minDistance, begin + 1, a, b);
+//		}
+//		if(a.charAt) {
+//			
+//		}
+//		
+//		
+//	}
+//	

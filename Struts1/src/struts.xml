@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        
+<struts>
+
+	<package name="it" extends="struts-default">
+	
+		<action name="loginUser" class="it.user.UserAction">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+	
+		<action name="loginUser01" class="it.user.UserAction" method="loginuser01">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		
+		<action name="loginUser02" class="it.user.UserAction" method="loginuser02">
+			<result>success.jsp</result> <!--  // you don't write anything it is success  -->
+			<result name="error">error.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>

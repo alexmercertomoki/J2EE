@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;lib&apos;&#x0A;- Original project: &apos;ToDoList8&apos;&#x0A;- Destination element: &apos;lib&apos;&#x0A;- Original elements:&#x0A;     formbeanfactory-2.1.0.jar&#x0A;     jstl-1.1.2.jar&#x0A;     standard-1.1.2.jar" description="Copy files" element1="WebContent/WEB-INF/lib/formbeanfactory-2.1.0.jar" element2="WebContent/WEB-INF/lib/jstl-1.1.2.jar" element3="WebContent/WEB-INF/lib/standard-1.1.2.jar" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1449778284557" target="/HW4/WebContent/WEB-INF/lib" units="0" version="1.0"/>
+</session>

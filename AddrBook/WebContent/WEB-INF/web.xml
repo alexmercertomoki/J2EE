@@ -1,0 +1,53 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>Home Address Book</display-name>
+    <description>
+        Configuration file for my home address book website
+    </description>
+
+  <!-- This definition specifies the controller servlet.                                     -->
+  <!-- The following parameters may be / must be specified:                                  -->
+  <!--                                                                                       -->
+  <!--    jdbcDriverName - set to specify the name of the JDBC Driver class to store in a    -->
+  <!--           MySQL database.  Also set "jdbcURL" param, but do not set set  the          -->
+  <!--           "dataDirectory" param.  It's checked first.                                 -->
+  <!--                                                                                       -->
+  <!--    jdbcURL - set to specify the location of the database in MySQL.  Also set the     -->
+  <!--           "jdbcURL" param, but do not set set  the "dataDirectory" param.             -->
+  <!--                                                                                       -->
+  <!--    requireSSL - set to cause non-secure requests to be redirected back to the site    -->
+  <!--           on port 443 (or port 8443 if the request came in on port 8080).             -->
+
+    <servlet>
+        <servlet-name>controller</servlet-name>
+        <servlet-class>edu.cmu.cs.webapp.addrbook.controller.Controller</servlet-class>
+
+        <init-param>
+        	<param-name>  requireSSL             </param-name>
+        	<param-value> false                  </param-value>
+        </init-param>
+        
+         <init-param>
+		    <param-name>  jdbcDriverName         </param-name> 
+		    <param-value> com.mysql.jdbc.Driver  </param-value>
+        </init-param>
+        
+        <init-param>
+        	<param-name>  jdbcURL                </param-name> 
+	    	<param-value> jdbc:mysql:///addrbook </param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>    controller             </servlet-name>
+        <url-pattern>     *.do                   </url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>    search.do              </welcome-file>
+    </welcome-file-list>
+</web-app>

@@ -1,0 +1,199 @@
+package homework5;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+/***********************************************************
+ *
+ * 08-722 Data Structures for Application Programmers Homework Assignment 5
+ * Document Similarity
+ *
+ * Andrew ID:bhuang 
+ * Name: Bilei huang
+ *
+ ***********************************************************/
+
+public class Similarity {
+	// the initial size is 0 
+	private int size = 0; // no static
+	// use hash map to handle the words problem, in case of over flow I used double on frequency
+	private HashMap<String, Double> hm = new HashMap<String, Double>();
+	// the number of lines is initiated to 0
+	private int numberOfLine = 0;
+	// the first constructor with a string passed in 
+	public Similarity(String value) {
+		//for the value passed in we consider the value not be null or 0 
+		if (value != null && value.length() != 0) {
+			// string array which store all the words from value splited by \\W Which 
+			String[] strarr = value.split("\\W");
+			// iterate through and add in all elements
+			for (int i = 0; i < strarr.length; i++) {
+				// if the word is OK to add in 
+				if (strarr[i] != null && strarr[i].length() != 0
+						&& strarr[i].matches("[A-Za-z]+")) {
+					// size increased by one 
+					size++;
+					// all the words to lower cases
+					String lowerCaseWord = strarr[i].toLowerCase();
+					// if contains the lower case word we add 1 to count
+					if (hm.containsKey(lowerCaseWord)) {
+						// adding
+						double count = hm.get(lowerCaseWord) + 1;
+						//put back to hash map
+						hm.put(lowerCaseWord, count);
+					} else {
+						//first time to add in put one 
+						hm.put(lowerCaseWord, 1.0);
+					}
+				}
+			}
+		}
+
+	}
+
+	public Similarity(File newFile) throws FileNotFoundException {
+		// the  new file is not null or its length is not  0 we start
+		if (newFile != null&&newFile.length()!=0) {
+			// scanning the file
+			Scanner file = new Scanner(newFile);
+			// iterate through
+			while (file.hasNextLine()) {
+				//number of lines  plus one if has next line
+				numberOfLine++;
+				String line = file.nextLine();
+				// split by \\W we get all the words 
+				String[] strarr = line.split("\\W");
+				// then we iterate through to add in all the words
+				for (int i = 0; i < strarr.length; i++) {
+					// all the words that should be added in
+					if (strarr[i] != null && strarr[i].length() != 0
+							&& strarr[i].matches("[A-Za-z]+")) {
+						// number of words 
+						size++;
+						// to lower case
+						String lowerCaseWord = strarr[i].toLowerCase();
+						// if contains the key we plus one and put back
+						if (hm.containsKey(lowerCaseWord)) {
+							double count = hm.get(lowerCaseWord) + 1;
+							hm.put(lowerCaseWord, count);
+						} else {
+							// not existing one we put 1 in frequency
+							hm.put(lowerCaseWord, 1.0);
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	public int numOfWords() {
+		// number of words.
+		return size;
+
+	}
+
+	public int numOfWordsNoDups() {
+		//  number of distinct words is the size of Hashmap
+		return hm.size();
+
+	}
+	
+	public double euclideanNorm(HashMap<String, Double> map) {
+		// the euclideanNorm
+		double ecn = 0;
+		// if the map is not null
+		if (map != null) {
+			// the square sum 
+			double squareSum = 0;
+			// the iterator for map 
+			Iterator<Entry<String, Double>> itr = map.entrySet().iterator();
+			// while itr has next value
+			while (itr.hasNext()) {
+				// try to get all the freqency squared and add in square sum
+				Map.Entry<String, Double> siPair = itr.next();
+				squareSum += ((double) siPair.getValue() * (double) siPair
+						.getValue());
+			}
+			//calculate the square root of squaresum which is the euclideanNorm
+			ecn = Math.sqrt(squareSum);
+
+			
+		}
+		return ecn;
+
+	}
+
+	public double euclideanNorm() {
+		// call another euclideanNorm() method
+		return this.euclideanNorm(hm);
+	}
+
+	public HashMap<String, Double> getMap() {
+		// the hashmap in the class
+		return this.hm;
+
+	}
+
+	// O(n) 
+	public double dotProduct(HashMap<String, Double> map) {
+		// the dotproduct value
+		double dotProduct = 0;
+		// if the map is not null
+		if (map != null) {
+			// map iterator 
+			Iterator<Entry<String, Double>> itr = map.entrySet().iterator();
+			// itr can be iterated through 
+			while (itr.hasNext()) {
+				//  the value pairs in the map
+				Entry<String, Double> siPair = itr.next();
+				// if hashmap contains the key in the map passed in  
+				if (hm.containsKey(siPair.getKey())) {
+					
+					dotProduct = dotProduct + hm.get(siPair.getKey())
+							* siPair.getValue();
+					
+				}
+
+			}
+		}
+
+		return dotProduct;
+
+	}
+
+	public double distance(HashMap<String, Double> map) {
+		
+		double dist = 0;
+		
+		if (map != null) {
+		
+			if((this.euclideanNorm()) * (euclideanNorm(map))==0){
+				return Math.PI/2;
+			}
+			double helper=this.dotProduct(map)
+					/ ((this.euclideanNorm()) * (euclideanNorm(map)));
+			
+			if(helper>1.0){
+				return 0;
+			}
+			dist = Math.acos(helper);
+			return dist;
+			
+		}
+		
+		return Math.PI/2;
+	}
+
+	public int numberOfLines() {
+
+		return numberOfLine;
+
+	}
+
+}

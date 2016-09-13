@@ -1,0 +1,10 @@
+package sorting;
+
+public class Test {
+	public static void main(String[] args) {
+		int[] numbers = {6 ,7 ,5 ,2 , 3, 1};
+		QuickSort qs = new QuickSort();
+		qs.quickSort(array, 0, numbers.length - 1);
+	}
+	
+}

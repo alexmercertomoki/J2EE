@@ -1,0 +1,11 @@
+package array2;
+
+import sun.font.CreatedFontTracker;
+
+public class Test {
+	public static void main(String[] args) {
+		CreatMaxNumber cmn = new CreatMaxNumber();
+		cmn.maxNumber(nums1, nums2, k)
+		
+	}
+}

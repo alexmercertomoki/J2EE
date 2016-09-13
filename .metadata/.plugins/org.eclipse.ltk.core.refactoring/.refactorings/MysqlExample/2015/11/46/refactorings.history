@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;MysqlExample&apos;&#x0A;- Original project: &apos;MysqlExample&apos;&#x0A;- Original elements:&#x0A;     PhoneListCreateTest.java&#x0A;     PhoneListInsertTest.java&#x0A;     PhoneListInsertTest2.java&#x0A;     PhoneListSelectTest.java" description="Delete elements" element1="/src&lt;{PhoneListSelectTest.java" element2="/src&lt;{PhoneListCreateTest.java" element3="/src&lt;{PhoneListInsertTest.java" element4="/src&lt;{PhoneListInsertTest2.java" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1447450885508" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,8 @@
+package sorting;
+
+public class Test {
+	public static void main(String[] args) {
+		int[] numbers = {6 ,7 ,5 ,2 , 3, 1};
+	}
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;lintCodeWorkOut.TopKFreq&apos; to &apos;TopKFreqCanNotSortByValue&apos;&#x0A;- Original project: &apos;NewEra&apos;&#x0A;- Original element: &apos;lintCodeWorkOut.TopKFreq&apos;&#x0A;- Renamed element: &apos;lintCodeWorkOut.TopKFreqCanNotSortByValue&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TopKFreq&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;lintCodeWorkOut{TopKFreq.java[TopKFreq" matchStrategy="1" name="TopKFreqCanNotSortByValue" qualified="false" references="true" similarDeclarations="false" stamp="1455918111094" textual="false" version="1.0"/>
+</session>

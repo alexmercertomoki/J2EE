@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;edu.cmu.cs.webapp.todolist2.databean&apos; to &apos;J2EEHw3/src&apos;&#x0A;- Original project: &apos;ToDoList2&apos;&#x0A;- Destination element: &apos;J2EEHw3/src&apos;&#x0A;- Original element: &apos;ToDoList2/src/edu.cmu.cs.webapp.todolist2.databean&apos;" description="Copy package" destination="=J2EEHw3/src" element1="/src&lt;edu.cmu.cs.webapp.todolist2.databean" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1448666972262" version="1.0"/>
+</session>

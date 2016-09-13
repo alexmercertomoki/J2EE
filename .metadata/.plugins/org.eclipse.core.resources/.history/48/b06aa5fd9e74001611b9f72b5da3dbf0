@@ -1,0 +1,11 @@
+package easy;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		LengthofLastWord l = new LengthofLastWord();
+		int i = l.lengthOfLastWord("    day");
+		System.out.println(i);
+		
+	}
+}

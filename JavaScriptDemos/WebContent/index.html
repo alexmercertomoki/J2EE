@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScript ToDoList Example</title>
+
+        <style>
+            li {
+                font-size: 24px;
+                font-weight: bold;
+                color: black;
+            }
+
+            a {
+                color: green;
+                text-decoration: overline;
+            }
+        </style>
+        
+        <script>
+            function addNames() {
+              	var first = document.getElementById("first-name").value;
+              	var last  = document.getElementById("last-name").value;
+              	alert(first + last);
+              	alert(parseInt(first) + parseInt(last));
+            }
+        </script>
+
+    </head>
+
+    <body onLoad="document.getElementById('first-name').focus()">
+        <div style="color:purple; font-size:36px; font-family:monospace; font-weight:bold; font-style:italic; ">
+            JavaScript Demos
+        </div>
+        <div>
+            <ul>
+                <li>Testing: <a href="movement.html">movement.html</a></li>
+                <li>123: <a href="todolist.html">todolist.html</a></li>
+            </ul>
+        </div>
+        <div>
+            <table>
+              <tr>
+                  <td>First Name:</td>
+                  <td><input id="first-name" type="text" size="40"/></td>
+              </tr>
+              <tr>
+                  <td>Last Name:</td>
+                  <td><input id="last-name" type="text" size="40"/></td>
+              </tr>
+              <tr>
+                  <td>Birthday:</td>
+                  <td><input id="birthday" type="date" size="40"/></td>
+              </tr>
+              <tr>
+                  <td>Favorite Color:</td>
+                  <td><input id="color" type="color" size="40"/></td>
+              </tr>
+              <tr>
+                  <td colspan="2"><input type="button" name="button" value="Add" onclick="addNames()"/></td>
+               </tr>
+            </table>
+        </div>
+    </body>
+</html>

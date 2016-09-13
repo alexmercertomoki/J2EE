@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;NewEra/src/basic_sort&apos;&#x0A;- Original project: &apos;NewEra&apos;&#x0A;- Destination element: &apos;NewEra/src/basic_sort&apos;&#x0A;- Original elements:&#x0A;     lintCodeWorkOut.ListNode.java&#x0A;     lintCodeWorkOut.ListInsertionSort.java" description="Copy compilation units" destination="/src&lt;basic_sort" element1="/src&lt;lintCodeWorkOut{ListNode.java" element2="/src&lt;lintCodeWorkOut{ListInsertionSort.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1457241630715" units="2" version="1.0"/>
+</session>

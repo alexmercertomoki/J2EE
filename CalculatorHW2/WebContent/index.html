@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello Calculator </title>
+		<meta charset="UTF-8">
+		
+		<style>
+ 			/* making table and td both have border */
+			  table, td{  
+			  		width: 180px;
+			  		background: steelblue;
+			  		text-align: right;
+			  		border: 1px solid black;
+			  }
+
+			  .operation{
+			  	  background: lightblue;
+			  }
+
+		</style>
+
+	</head>
+
+
+
+	<body>
+		<form action="calc" method="GET">
+			<table>
+				<tr>
+					<td> X: </td>
+					<td><input type="text" name="x" value="0" ></td>
+				</tr>
+	
+				<tr>
+					<td> Y: </td>
+					<td><input type="text" name="y" value="0" ></td>
+					
+				</tr>
+	
+				<tr>
+					<td colspan="2" style="text-align: center"> 
+						<input class="operation" type="submit"  name = "operation" value="+" >
+						<input class="operation" type="submit"  name = "operation" value="-" >
+						<input class="operation" type="submit"  name = "operation" value="*" >
+						<input class="operation"  type="submit"  name = "operation" value="/" >
+					</td>
+					
+				</tr>
+	
+			</table>
+		</form>
+	</body>
+
+</html>

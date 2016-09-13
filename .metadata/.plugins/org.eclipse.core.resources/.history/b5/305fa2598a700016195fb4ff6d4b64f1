@@ -1,0 +1,29 @@
+package dp;
+
+public class WildCard {
+	 public boolean isMatch(String s, String p) {
+	        return searchMatch(s, p , 0 , 0);
+	    }
+	    
+	    private searchMatch(String a, String b, int pa, int pb) {
+	        if(pa == a.size() && pb == b.size()){
+	            return true;
+	        }
+	        if(pa == a.size()) {
+	            if(a[pb] == '*') {
+	                return searchMatch(a, b, pa, pb + 1);
+	            }
+	            return false;
+	        }
+	        
+	        if(b[pb] == '?') {
+	            return searchMatch(a,b, pa + 1, pb + 1);
+	        } else if (b[pb] == '*') {
+	            return searchMatch(a, b, pa, pb + 1) || searchMatch(
+	                a, b, pa + 1, pb);
+	        } else {
+	            return a[pa] == b[pb] && serachMatch(a,b pa + 1, pb + 1);
+	        }
+	    }
+
+}

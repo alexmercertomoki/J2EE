@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory name="java:comp/env/hibernate/SessionFactory">
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">
+			org.gjt.mm.mysql.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://127.0.0.1/hibernatetest
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">12345</property>
+
+		<!-- JDBC connection pool (use the built-in)池化技术 -->
+		<property name="connection.pool_size">10</property>
+
+		<!-- SQL方言，org.hibernate.dialect.OracleDialect适合所有Oracle数据库 -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+
+		<!-- 显示SQL语句 -->
+		<property name="show_sql">true</property>
+		
+		<!-- SQL语句整形 -->
+		<property name="format_sql">true</property>
+		
+		<!-- 启动时创建表.这个选项在第一次启动程序时放开,以后切记关闭 -->
+        <property name="hbm2ddl.auto">create</property> 
+						
+		<!-- 持久化类的映射文件 -->
+<!--		<mapping resource="com/bgy/domain/Employee.hbm.xml" />-->
+<!--		<mapping resource="com/bgy/domain/Company.hbm.xml" />-->
+			<mapping resource="com/bgy/domain/User.hbm.xml" />
+		<mapping resource="com/bgy/domain/Admin.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

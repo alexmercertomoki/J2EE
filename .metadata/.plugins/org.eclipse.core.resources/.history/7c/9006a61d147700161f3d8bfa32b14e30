@@ -1,0 +1,116 @@
+package strings;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Stack;
+
+public class DecodeString {
+	 public String decodeString(String s) 
+	    {
+	        Stack<Character> sta = new Stack<Character>();
+	        for (char c:s.toCharArray())
+	        {
+	            if(c==']')
+	            {
+	                String repeat="";
+	                while(sta.peek()!='[')
+	                {
+	                    repeat=sta.peek()+repeat;
+	                    sta.pop();
+	                }
+	                sta.pop();
+	                String num="";
+	                while(!sta.isEmpty())
+	                {
+	                    char n = sta.peek();
+	                    if(!Character.isDigit(n))break;
+	                    else
+	                    {
+	                        num = n+num;
+	                        sta.pop();
+	                    }
+	                }
+	                int re=0;
+	                if(num.equals(""))re=1;
+	                else re=Integer.parseInt(num);
+	                while(re-->0)
+	                {
+	                    for(char c1:repeat.toCharArray())
+	                        sta.push(c1);
+	                }
+	            }
+	            else
+	            {
+	                sta.push(c);
+	            }
+	        }
+	        String res="";
+	        while(!sta.isEmpty())
+	        {
+	            
+	            res=sta.peek()+res;
+	            sta.pop();
+	        }
+	        return res;
+	    }
+	 
+	 public String decodeString2(String s) {
+	        StringBuilder sb = new StringBuilder();
+	        Deque<Integer> dq = new ArrayDeque<>();
+	        
+	        int last = -1;
+	        for (int i = 0; i < s.length(); i++) {
+	            if (last < 0 && dq.isEmpty() && !(s.charAt(i) >= '0' && s.charAt(i) <= '9')) {
+	                sb.append(s.charAt(i));
+	            } else if (last < 0 && (s.charAt(i) >= '0' && s.charAt(i) <= '9')) {
+	                last = i;
+	            } else if (s.charAt(i) == '[') {
+	                dq.addFirst(i);
+	            } else if (s.charAt(i) == ']') {
+	                int j = dq.removeFirst();
+	                if (dq.isEmpty()) {
+	                    String mid = decodeString2(s.substring(j+1, i));
+	                    int dups = Integer.parseInt(s.substring(last, j));
+	                    for (int k = 0; k < dups; k++) sb.append(mid);
+	                    last = -1;
+	                }
+	            }
+	        }
+	        return sb.toString();
+	    }
+	 
+	 
+		    public String decodeString3(String s) {
+		        if(s == null || s.length() == 0) {
+		            return "";
+		        }
+		        int last = -1;
+		        StringBuilder sb = new StringBuilder();
+		        Stack<Integer> stack = new Stack<>();
+		        
+		        for(int i = 0; i < s.length(); i++) {
+		            if(last < 0 && stack.isEmpty() && s.charAt(i) >= 'a' && s.charAt(i) <= 'z') {
+		                sb.append(s.charAt(i));
+		            } else if(last < 0 && s.charAt(i) >= '0' && s.charAt(i) <= '9') {
+		                last = i;
+		            } else if(s.charAt(i) == '[') {
+		                stack.push(i);
+		            } else if (s.charAt(i) == ']') {
+		                int j = stack.pop();
+		                if(stack.isEmpty()) {
+		                    String mid = decodeString3(s.substring(j + 1, i));
+		                    int dups = Integer.parseInt(s.substring(last, j));
+		                    for(int a = 0; a < dups; a++) {
+		                        sb.append(mid);
+		                    }
+		                }
+		            }
+		            
+		        }
+		        
+		        return sb.toString();
+		        
+		    }
+	 
+	 
+}

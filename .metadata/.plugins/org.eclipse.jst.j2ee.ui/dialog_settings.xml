@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="true" key="J2EE_EXPORT_SOURCE"/>
+	<list key="J2EE_IMPORT_null">
+		<item value="/Users/mac/Desktop/J2EEWebApp/Lectures/lec11/ToDoList8.war"/>
+		<item value="/Users/mac/Desktop/J2EEWebApp/Lectures/lec11/Photos.war"/>
+		<item value="/Users/mac/Desktop/J2EEWebApp/Lectures/lec11/AddrBook.war"/>
+		<item value="/Users/mac/Desktop/J2EEWebApp/Lectures/lec10/ToDoList7.war"/>
+		<item value="/Users/mac/Desktop/J2EEWebApp/Lectures/lec7/ToDoList4.war"/>
+		<item value="/Users/mac/Desktop/J2EEWebApp/Lectures/lec7/ToDoList3.war"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v8.0"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="/Users/mac/Desktop/HW4.war"/>
+		<item value="/Users/mac/Desktop/HW3.war"/>
+		<item value="/Users/mac/Desktop/J2EEHw3.war"/>
+		<item value="/Users/mac/Documents/database ppt/Data_Mining&amp;Cloud/CalculatorHW2.war"/>
+		<item value="/Users/mac/Desktop/hw2.war"/>
+	</list>
+</section>

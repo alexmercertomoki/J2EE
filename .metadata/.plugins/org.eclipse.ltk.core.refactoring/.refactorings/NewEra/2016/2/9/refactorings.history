@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TreeNode.java&apos; to &apos;NewEra/src/dfs_workout&apos;&#x0A;- Original project: &apos;NewEra&apos;&#x0A;- Destination element: &apos;NewEra/src/dfs_workout&apos;&#x0A;- Original element: &apos;lintCodeWorkOut.TreeNode.java&apos;" description="Copy compilation unit" destination="/src&lt;dfs_workout" element1="/src&lt;lintCodeWorkOut{TreeNode.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1456536410881" units="1" version="1.0"/>
+</session>

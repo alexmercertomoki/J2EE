@@ -1,0 +1,46 @@
+package dp;
+
+public class WildCard {
+	
+	    
+	    public boolean isMatch(String s, String p) {
+	    	int[][] cache = new int[s.length()][p.length()];
+	        return searchMatch(s, p , 0 , 0, cache);
+	    }
+	    
+	    private boolean searchMatch(String a, String b, int pa, int pb, int cache[][]) {
+	        if(pa == a.length() && pb == b.length()){
+	        	cache[pa][pb] = 1;
+	            return true;
+	        }
+	        // *是多个 ，?是单个 
+	        if(pa == a.length()) {
+	            if(b.charAt(pb) == '*') {
+	                return searchMatch(a, b, pa, pb + 1);
+	            }
+	            cache[pa][pb] = -1;
+	            return false;
+	        }
+	       
+	        if(pb == b.length()) {
+	        	cache[pa][pb] = -1;
+	        	return false;
+	        }
+	        
+	        if(b.charAt(pb) == '?') {
+	            return searchMatch(a,b, pa + 1, pb + 1, cache);
+	        } else if (b.charAt(pb) == '*') {
+	            return searchMatch(a, b, pa, pb + 1, cache) || searchMatch(
+	                a, b, pa + 1, pb, cache);
+	        } else {
+	            return (a.charAt(pa) == b.charAt(pb)) && searchMatch(a,b, pa + 1, pb + 1, cache);
+	        }
+	    }
+	    
+	    
+	    //情况分类： 
+	    
+	    
+	    
+
+}

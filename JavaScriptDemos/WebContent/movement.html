@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+      	<meta charset="utf-8" >
+        <title>JavaScript Movement Example</title>
+        <style>
+            input {
+                font-size:18px;
+            }
+        </style>
+        <script type="text/javascript">
+            function myMove(verticalChange,horizantalChange) {
+                var myElement = document.getElementById("myElement");
+                myElement.style.left = parseInt(myElement.style.left)+50*horizantalChange+"px";
+                myElement.style.top  = parseInt(myElement.style.top)+50*verticalChange+"px";
+            }
+        </script>
+    </head>
+
+    <body id="body">
+
+        <div id="myElement" style="font-size:36px; font-family:sans-serif; position:absolute; left:400px; top:400px;">
+           Element
+        </div>
+
+        <h2>Example Use of JavaScript to Move an Element</h2>
+        <div style="text-align: center">
+            <input type="button" value="Up" onClick="myMove(-1,0)" >
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div style="text-align: center">
+            <input type="button" value="Left" onClick="myMove(0,-1)" >
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="button" value="Right" onClick="myMove(0,1)" >
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div style="text-align: center">
+            <input type="button" value="Down" onClick="myMove(1,0)" >
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div style="text-align: center">
+            <input  type="button" value="Red" style="color:red;"
+                    onClick='document.getElementById("myElement").style.color = "red"' >
+            <input  type="button" value="Orange" style="color:orange;"
+                    onClick='document.getElementById("myElement").style.color = "orange"' >
+            <input  type="button" value="Yellow" style="color:yellow;"
+                    onClick='document.getElementById("myElement").style.color = "yellow"' >
+            <input  type="button" value="Green" style="color:green;"
+                    onClick='document.getElementById("myElement").style.color = "green"' >
+            <input  type="button" value="Blue" style="color:blue;"
+                    onClick='document.getElementById("myElement").style.color = "blue"' >
+            <input  type="button" value="Indigo" style="color:indigo;"
+                    onClick='document.getElementById("myElement").style.color = "indigo"' >
+            <input  type="button" value="Violet" style="color:violet;"
+                    onClick='document.getElementById("myElement").style.color = "violet"' >
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div style="text-align: center">
+            <input  type="button" value="Black" style="color:black;"
+                    onClick='document.getElementById("myElement").style.color = "black"' >
+            <input  type="button" value="Brown" style="color:brown;"
+                    onClick='document.getElementById("myElement").style.color = "brown"' >
+            <input  type="button" value="White" style="color:white;"
+                    onClick='document.getElementById("myElement").style.color = "white"' >
+        </div>
+
+    </body>
+</html>
